@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ogretmenbullModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblFakulte">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UniversiteID" Type="nvarchar" MaxLength="255" />
+          <Property Name="FakulteAd" Type="nvarchar" MaxLength="255" />
+          <Property Name="Aktif" Type="nvarchar" MaxLength="255" />
+          <Property Name="FormasyonGerekli" Type="nvarchar" MaxLength="255" />
+          <Property Name="UniquidKolon1" Type="nvarchar" MaxLength="255" />
+          <Property Name="tabloguid" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tblUniversite">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UniversiteAd" Type="nvarchar" MaxLength="255" />
+          <Property Name="Aktif" Type="nvarchar" MaxLength="255" />
+          <Property Name="UstGrupID" Type="nvarchar" MaxLength="255" />
+          <Property Name="UniquidKolon1" Type="nvarchar" MaxLength="255" />
+          <Property Name="tabloguid" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tblOgretmenGiris">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OzelKod" Type="varchar" MaxLength="50" />
+          <Property Name="Ad" Type="varchar" MaxLength="40" />
+          <Property Name="Soyad" Type="varchar" MaxLength="40" />
+          <Property Name="EPosta" Type="varchar" MaxLength="80" />
+          <Property Name="Parola" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblOzgecmis">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciID" Type="int" />
+          <Property Name="Okul" Type="varchar" MaxLength="200" />
+          <Property Name="Fakulte" Type="varchar" MaxLength="200" />
+          <Property Name="Bolum" Type="varchar" MaxLength="200" />
+          <Property Name="DeneyimYil" Type="varchar" MaxLength="100" />
+          <Property Name="Ozgecmis" Type="varchar" MaxLength="100" />
+          <Property Name="AktifDurum" Type="varchar" MaxLength="10" />
+          <Property Name="GonderimTarih" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblSehir">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SehirAd" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblSehirSecim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciID" Type="int" />
+          <Property Name="SehirBir" Type="varchar" MaxLength="50" />
+          <Property Name="Sehiriki" Type="varchar" MaxLength="50" />
+          <Property Name="SehirUc" Type="varchar" MaxLength="50" />
+          <Property Name="SehirDort" Type="varchar" MaxLength="50" />
+          <Property Name="SehirBes" Type="varchar" MaxLength="50" />
+          <Property Name="AktifDurum" Type="varchar" MaxLength="50" />
+          <Property Name="Tarih" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="spOgretmenGiris" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ogretmenbulluser">
+          <Parameter Name="OzelKod" Type="varchar" Mode="In" />
+          <Parameter Name="Ad" Type="varchar" Mode="In" />
+          <Parameter Name="Soyad" Type="varchar" Mode="In" />
+          <Parameter Name="EPosta" Type="varchar" Mode="In" />
+          <Parameter Name="Parola" Type="varchar" Mode="In" />
+          <Parameter Name="Durum" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spOzgecmisKaydet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ogretmenbulluser">
+          <Parameter Name="KullaniciID" Type="int" Mode="In" />
+          <Parameter Name="Okul" Type="varchar" Mode="In" />
+          <Parameter Name="Fakulte" Type="varchar" Mode="In" />
+          <Parameter Name="Bolum" Type="varchar" Mode="In" />
+          <Parameter Name="DeneyimYil" Type="varchar" Mode="In" />
+          <Parameter Name="Ozgecmis" Type="varchar" Mode="In" />
+          <Parameter Name="AktifDurum" Type="varchar" Mode="In" />
+          <Parameter Name="GonderimTarih" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spSehirSecim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ogretmenbulluser">
+          <Parameter Name="KullaniciID" Type="int" Mode="In" />
+          <Parameter Name="SehirBir" Type="varchar" Mode="In" />
+          <Parameter Name="Sehiriki" Type="varchar" Mode="In" />
+          <Parameter Name="SehirUc" Type="varchar" Mode="In" />
+          <Parameter Name="SehirDort" Type="varchar" Mode="In" />
+          <Parameter Name="SehirBes" Type="varchar" Mode="In" />
+          <Parameter Name="AktifDurum" Type="varchar" Mode="In" />
+          <Parameter Name="Tarih" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="ogretmenbullModelStoreContainer">
+          <EntitySet Name="tblFakulte" EntityType="Self.tblFakulte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUniversite" EntityType="Self.tblUniversite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOgretmenGiris" EntityType="Self.tblOgretmenGiris" Schema="ogretmenbulluser" store:Type="Tables" />
+          <EntitySet Name="tblOzgecmis" EntityType="Self.tblOzgecmis" Schema="ogretmenbulluser" store:Type="Tables" />
+          <EntitySet Name="tblSehir" EntityType="Self.tblSehir" Schema="ogretmenbulluser" store:Type="Tables" />
+          <EntitySet Name="tblSehirSecim" EntityType="Self.tblSehirSecim" Schema="ogretmenbulluser" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ogretmenbullModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ogretmenbullEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="spCvGuncelle">
+            <Parameter Name="Ad" Mode="In" Type="String" />
+            <Parameter Name="Soyad" Mode="In" Type="String" />
+            <Parameter Name="EPosta" Mode="In" Type="String" />
+            <Parameter Name="Telefon" Mode="In" Type="String" />
+            <Parameter Name="Dosyayol" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spKisiselOzgecmis">
+            <Parameter Name="KullaniciKodu" Mode="In" Type="String" />
+            <Parameter Name="Ad" Mode="In" Type="String" />
+            <Parameter Name="Soyad" Mode="In" Type="String" />
+            <Parameter Name="Telefon" Mode="In" Type="String" />
+            <Parameter Name="Dosya" Mode="In" Type="String" />
+            <Parameter Name="OnYazi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spKisiselOzgecmis2">
+            <Parameter Name="KullaniciKodu" Mode="In" Type="String" />
+            <Parameter Name="Ad" Mode="In" Type="String" />
+            <Parameter Name="Soyad" Mode="In" Type="String" />
+            <Parameter Name="Telefon" Mode="In" Type="String" />
+            <Parameter Name="Dosya" Mode="In" Type="String" />
+            <Parameter Name="OnYazi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spYeniUye">
+            <Parameter Name="KullaniciKodu" Mode="In" Type="String" />
+            <Parameter Name="EPosta" Mode="In" Type="String" />
+            <Parameter Name="Parola" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spCvGuncelle1">
+            <Parameter Name="Ad" Mode="In" Type="String" />
+            <Parameter Name="Soyad" Mode="In" Type="String" />
+            <Parameter Name="EPosta" Mode="In" Type="String" />
+            <Parameter Name="Telefon" Mode="In" Type="String" />
+            <Parameter Name="Dosyayol" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spKisiselOzgecmis1">
+            <Parameter Name="KullaniciKodu" Mode="In" Type="String" />
+            <Parameter Name="Ad" Mode="In" Type="String" />
+            <Parameter Name="Soyad" Mode="In" Type="String" />
+            <Parameter Name="Telefon" Mode="In" Type="String" />
+            <Parameter Name="Dosya" Mode="In" Type="String" />
+            <Parameter Name="OnYazi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spOgretmenGirisKaydet">
+            <Parameter Name="OzelKod" Mode="In" Type="String" />
+            <Parameter Name="Ad" Mode="In" Type="String" />
+            <Parameter Name="Soyad" Mode="In" Type="String" />
+            <Parameter Name="EPosta" Mode="In" Type="String" />
+            <Parameter Name="Parola" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spYeniUye1">
+            <Parameter Name="KullaniciKodu" Mode="In" Type="String" />
+            <Parameter Name="EPosta" Mode="In" Type="String" />
+            <Parameter Name="Parola" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="tblOgretmenGiris" EntityType="ogretmenbullModel.tblOgretmenGiris" />
+          <FunctionImport Name="spOgretmenGiris" ReturnType="Collection(String)">
+            <Parameter Name="OzelKod" Mode="In" Type="String" />
+            <Parameter Name="Ad" Mode="In" Type="String" />
+            <Parameter Name="Soyad" Mode="In" Type="String" />
+            <Parameter Name="EPosta" Mode="In" Type="String" />
+            <Parameter Name="Parola" Mode="In" Type="String" />
+            <Parameter Name="Durum" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="tblFakulte" EntityType="ogretmenbullModel.tblFakulte" />
+          <EntitySet Name="tblUniversite" EntityType="ogretmenbullModel.tblUniversite" />
+          <EntitySet Name="tblOzgecmis" EntityType="ogretmenbullModel.tblOzgecmis" />
+          <FunctionImport Name="spOzgecmisKaydet">
+            <Parameter Name="KullaniciID" Mode="In" Type="Int32" />
+            <Parameter Name="Okul" Mode="In" Type="String" />
+            <Parameter Name="Fakulte" Mode="In" Type="String" />
+            <Parameter Name="Bolum" Mode="In" Type="String" />
+            <Parameter Name="DeneyimYil" Mode="In" Type="String" />
+            <Parameter Name="Ozgecmis" Mode="In" Type="String" />
+            <Parameter Name="AktifDurum" Mode="In" Type="String" />
+            <Parameter Name="GonderimTarih" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="tblSehir" EntityType="ogretmenbullModel.tblSehir" />
+          <EntitySet Name="tblSehirSecim" EntityType="ogretmenbullModel.tblSehirSecim" />
+          <FunctionImport Name="spSehirSecim">
+            <Parameter Name="KullaniciID" Mode="In" Type="Int32" />
+            <Parameter Name="SehirBir" Mode="In" Type="String" />
+            <Parameter Name="Sehiriki" Mode="In" Type="String" />
+            <Parameter Name="SehirUc" Mode="In" Type="String" />
+            <Parameter Name="SehirDort" Mode="In" Type="String" />
+            <Parameter Name="SehirBes" Mode="In" Type="String" />
+            <Parameter Name="AktifDurum" Mode="In" Type="String" />
+            <Parameter Name="Tarih" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="tblOgretmenGiris">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OzelKod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ad" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Soyad" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="EPosta" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="Parola" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblFakulte">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UniversiteID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FakulteAd" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Aktif" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FormasyonGerekli" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UniquidKolon1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tabloguid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblUniversite">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UniversiteAd" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Aktif" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UstGrupID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UniquidKolon1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tabloguid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblOzgecmis">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciID" Type="Int32" />
+          <Property Name="Okul" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Fakulte" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Bolum" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DeneyimYil" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ozgecmis" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AktifDurum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="GonderimTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblSehir">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SehirAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblSehirSecim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciID" Type="Int32" />
+          <Property Name="SehirBir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sehiriki" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SehirUc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SehirDort" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SehirBes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AktifDurum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ogretmenbullModelStoreContainer" CdmEntityContainer="ogretmenbullEntities">
+          <EntitySetMapping Name="tblOgretmenGiris">
+            <EntityTypeMapping TypeName="ogretmenbullModel.tblOgretmenGiris">
+              <MappingFragment StoreEntitySet="tblOgretmenGiris">
+                <ScalarProperty Name="Parola" ColumnName="Parola" />
+                <ScalarProperty Name="EPosta" ColumnName="EPosta" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="OzelKod" ColumnName="OzelKod" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spOgretmenGiris" FunctionName="ogretmenbullModel.Store.spOgretmenGiris" />
+          <EntitySetMapping Name="tblFakulte">
+            <EntityTypeMapping TypeName="ogretmenbullModel.tblFakulte">
+              <MappingFragment StoreEntitySet="tblFakulte">
+                <ScalarProperty Name="tabloguid" ColumnName="tabloguid" />
+                <ScalarProperty Name="UniquidKolon1" ColumnName="UniquidKolon1" />
+                <ScalarProperty Name="FormasyonGerekli" ColumnName="FormasyonGerekli" />
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="FakulteAd" ColumnName="FakulteAd" />
+                <ScalarProperty Name="UniversiteID" ColumnName="UniversiteID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUniversite">
+            <EntityTypeMapping TypeName="ogretmenbullModel.tblUniversite">
+              <MappingFragment StoreEntitySet="tblUniversite">
+                <ScalarProperty Name="tabloguid" ColumnName="tabloguid" />
+                <ScalarProperty Name="UniquidKolon1" ColumnName="UniquidKolon1" />
+                <ScalarProperty Name="UstGrupID" ColumnName="UstGrupID" />
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="UniversiteAd" ColumnName="UniversiteAd" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOzgecmis">
+            <EntityTypeMapping TypeName="ogretmenbullModel.tblOzgecmis">
+              <MappingFragment StoreEntitySet="tblOzgecmis">
+                <ScalarProperty Name="GonderimTarih" ColumnName="GonderimTarih" />
+                <ScalarProperty Name="AktifDurum" ColumnName="AktifDurum" />
+                <ScalarProperty Name="Ozgecmis" ColumnName="Ozgecmis" />
+                <ScalarProperty Name="DeneyimYil" ColumnName="DeneyimYil" />
+                <ScalarProperty Name="Bolum" ColumnName="Bolum" />
+                <ScalarProperty Name="Fakulte" ColumnName="Fakulte" />
+                <ScalarProperty Name="Okul" ColumnName="Okul" />
+                <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spOzgecmisKaydet" FunctionName="ogretmenbullModel.Store.spOzgecmisKaydet" />
+          <EntitySetMapping Name="tblSehir">
+            <EntityTypeMapping TypeName="ogretmenbullModel.tblSehir">
+              <MappingFragment StoreEntitySet="tblSehir">
+                <ScalarProperty Name="SehirAd" ColumnName="SehirAd" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSehirSecim">
+            <EntityTypeMapping TypeName="ogretmenbullModel.tblSehirSecim">
+              <MappingFragment StoreEntitySet="tblSehirSecim">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="AktifDurum" ColumnName="AktifDurum" />
+                <ScalarProperty Name="SehirBes" ColumnName="SehirBes" />
+                <ScalarProperty Name="SehirDort" ColumnName="SehirDort" />
+                <ScalarProperty Name="SehirUc" ColumnName="SehirUc" />
+                <ScalarProperty Name="Sehiriki" ColumnName="Sehiriki" />
+                <ScalarProperty Name="SehirBir" ColumnName="SehirBir" />
+                <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spSehirSecim" FunctionName="ogretmenbullModel.Store.spSehirSecim" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

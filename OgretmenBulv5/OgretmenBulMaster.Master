@@ -1,0 +1,256 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="OgretmenBulMaster.master.cs" Inherits="OgretmenBulv5.OgretmenBulMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Öğretmenbul.org</title>
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="innerpage about-page">
+    <form id="form1" runat="server">
+        <div class="preloader-area">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <header class="site-header" id="header">
+            <div class="header-top gray-bg-md">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 d-none d-lg-block">
+                            <div class="logo">
+                                <a href="#">
+                                    <img src="assets/img/logo/logo.png" alt="images here"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-9">
+                            <div class="row">
+                                <div class="col-sm-4 px-1">
+                                    <div class="header-contact-info-box d-flex">
+                                        <i class="flaticon-phone theme-color"></i>
+                                        <div class="header-contact-info">
+                                            <h6>Telefon</h6>
+                                            <p>+90 312 999 99 99 </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 px-1">
+                                    <div class="header-contact-info-box d-flex">
+                                        <i class="flaticon-mail theme-color"></i>
+                                        <div class="header-contact-info">
+                                            <h6>E-Posta</h6>
+                                            <p>bilgi@ogretmenbul.org</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 px-1">
+                                    <div class="header-contact-info-box d-flex">
+                                        <i class="flaticon-clock theme-color"></i>
+                                        <%--  <div class="header-contact-info">
+                                            <h6>Çalışma Saatimiz</h6>
+                                            <p>
+                                                P.tesi<span class="d-none d-xl-inline-block">day</span> - Sat<span
+                                                    class="d-none d-xl-inline-block">urday</span> 9 a.m. - 9 p.m.
+                                            </p>
+                                        </div>--%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 col-lg-10">
+                            <div class="logo d-inline-block d-lg-none">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/logo.png" alt="images here"></a>
+                            </div>
+                            <div class="main-menu">
+                                <nav class="navbar navbar-expand-lg p-0">
+                                    <div class="collapse navbar-collapse rapti-nav animated pr-lg-0" id="mobile-menu">
+                                        <ul class="navbar-nav flex-fill justify-content-between align-items-center">
+                                            <li class="nav-item active">
+                                                <a class="nav-link font-weight-500 pl-lg-0 current" href="AnaSayfa.aspx">Ana Sayfa</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link font-weight-500" href="ogretmenbul.aspx">Hakkımızda</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link font-weight-500" href="ogretmen.aspx">Öğretmen Aday Girişi</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link font-weight-500" href="okul.aspx">Okul Girişi</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link font-weight-500" href="iletisim.aspx">Bize Ulaşın</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <!-- footer start -->
+        <footer class="footer dark-bg">
+            <div class="widget-area">
+                <div class="container pt-55 pb-55">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4">
+                            <div class="footer-widget widget-1">
+                                <img src="assets/img/logo/logo-white.png" alt="footer logo" class="pb-50">
+                                <p class="white">
+                                    25 yıllık deneyimizi ve binlerce adayımızın ve okullarımızın işe alım sürecini tamamladık. 
+                                </p>
+                                <div class="inline-social-icon mt-30">
+                                    <ul>
+                                        <li><a href="#"><i class="flaticon-twitter theme-color"></i></a></li>
+                                        <li><a href="#"><i class="flaticon-facebook-logo theme-color"></i></a></li>
+                                        <li><a href="#"><i class="flaticon-youtube-logo theme-color"></i></a></li>
+                                        <li><a href="#"><i class="flaticon-dribbble theme-color"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="footer-widget footer-latest-news widget-2 mt-30 mt-lg-0">
+                                <h3 class="white pb-50">Son Haberler</h3>
+                                <div class="post-wrap mb-15 d-flex">
+                                    <div class="featured-img mr-15">
+                                        <img src="assets/img/footer/footer-blog-feature-1.jpg" alt="images here">
+                                    </div>
+                                    <div class="post-info">
+                                        <p class="postby theme-color">Post By: Smason</p>
+                                        <p class="post-date theme-color">Date: 11 June. 2019</p>
+                                        <p class="postname white">Lorem Ipsum dolor seat ameat dui too con secteture elite.</p>
+                                    </div>
+                                </div>
+                                <div class="post-wrap d-flex">
+                                    <div class="featured-img mr-15">
+                                        <img src="assets/img/footer/footer-blog-feature-2.jpg" alt="images here">
+                                    </div>
+                                    <div class="post-info">
+                                        <p class="postby theme-color">Post By: Walton</p>
+                                        <p class="post-date theme-color">Date: 15 June. 2019</p>
+                                        <p class="postname white">Lorem Ipsum dolor seat ameat dui too con secteture elite.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%--<div class="col-lg-4">
+                            <div class="footer-widget form-widget white-bg widget-3 mt-30 mt-lg-0">
+                                <h3 class="mb-20">Request Call Back</h3>
+                                <div action="assets/mail/request-mail.php" method="post">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <label for="validationCustom01" class="sr-only">Full name</label>
+                                            <input type="text" class="form-control" id="validationCustom01" name="rfname" placeholder="Your Full Name"
+                                                value="" required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4" class="sr-only">Email</label>
+                                            <input type="email" class="form-control" id="inputEmail4" name="remail" placeholder="Email">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputNumber4" class="sr-only">Phone</label>
+                                            <input type="tel" class="form-control" id="inputNumber4" name="rphone" placeholder="888-1234-000">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1" class="sr-only">Textarea</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="message"
+                                            placeholder="Message*"></textarea>
+                                    </div>
+                                    <button type="submit" name="submit" class="btn btn-color boxed-btn">
+                                        Request Send <i
+                                            class="flaticon-right-arrow"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>--%>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area pt-40 pb-40">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 p-0 pl-lg-0">
+                            <div class="copyright-text text-center text-lg-left">
+                                <p class="white">
+                                    Copyright ©2021 <span class="theme-color">Ogretmenbul.org</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 p-0 pr-lg-0">
+                            <div class="copyright-menu text-center text-lg-right">
+                                <nav>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item"><a href="#" class="white font-weight-normal">Ana Sayfa</a></li>
+                                        <li class="list-inline-item"><a href="#" class="white font-weight-normal">KVKK Kuralları</a></li>
+                                        <li class="list-inline-item"><a href="#" class="white font-weight-normal">Yazılar</a></li>
+                                        <li class="list-inline-item"><a href="#" class="white font-weight-normal">Bize Ulaşın</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+
+        <!-- Go To Top -->
+        <div class="go-top">
+            <i class="flaticon-up-arrow"></i>
+            <i class="flaticon-up-arrow"></i>
+        </div>
+
+        <script src="assets/js/jquery-1.12.4.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/waypoints.min.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/isotope.pkgd.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </form>
+</body>
+</html>

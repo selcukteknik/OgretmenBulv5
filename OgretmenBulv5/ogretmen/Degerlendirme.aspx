@@ -182,14 +182,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="OgretmenOzgecmis.aspx" aria-expanded="false">
+                    <a class="nav-link"  href="OgretmenOzgecmis.aspx">
                         <i class="icon-layout menu-icon"></i>
                         <span class="menu-title">Özgeçmiş</span>
 
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="Degerlendir.aspx" aria-expanded="false">
+                    <a class="nav-link"  href="Degerlendir.aspx">
                         <i class="icon-columns menu-icon"></i>
                         <span class="menu-title">Değerlendirme</span>
 
@@ -197,7 +197,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="Degerlendirme.aspx" aria-expanded="false">
+                    <a class="nav-link"  href="Degerlendirme.aspx">
                         <i class="icon-bar-graph menu-icon"></i>
                         <span class="menu-title">Başvuru</span>
 
@@ -205,7 +205,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="Yardim.aspx" aria-expanded="false">
+                    <a class="nav-link" href="Yardim.aspx" >
                         <i class="icon-grid-2 menu-icon"></i>
                         <span class="menu-title">Yardım</span>
 

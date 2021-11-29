@@ -165,20 +165,6 @@
     <Compile Include="ogretmen\Degerlendirme.aspx.designer.cs">
       <DependentUpon>Degerlendirme.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ogretmen\Ogretmen.aspx.cs">
-      <DependentUpon>Ogretmen.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ogretmen\Ogretmen.aspx.designer.cs">
-      <DependentUpon>Ogretmen.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ogretmen\Ogretmen.Master.cs">
-      <DependentUpon>Ogretmen.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ogretmen\Ogretmen.Master.designer.cs">
-      <DependentUpon>Ogretmen.Master</DependentUpon>
-    </Compile>
     <Compile Include="ogretmen\OgretmenAnaSayfa.aspx.cs">
       <DependentUpon>OgretmenAnaSayfa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -598,7 +584,6 @@
     <Content Include="ogretmen\js\typeahead.js" />
     <Content Include="ogretmen\js\wizard.js" />
     <Content Include="ogretmen\js\x-editable.js" />
-    <Content Include="ogretmen\Ogretmen.aspx" />
     <Content Include="ogretmen\OgretmenAnaSayfa.aspx" />
     <Content Include="ogretmen\OgretmenKayit.aspx" />
     <Content Include="ogretmen\OgretmenOzgecmis.aspx" />
@@ -1981,7 +1966,6 @@
       <DependentUpon>OgretmenBull.edmx</DependentUpon>
     </Content>
     <Content Include="ogretmen\OgretmenMaster.Master" />
-    <Content Include="ogretmen\Ogretmen.Master" />
     <Content Include="ogretmen\Site1.Master" />
     <None Include="packages.config" />
     <None Include="web.Debug.config">

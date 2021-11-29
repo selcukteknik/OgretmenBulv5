@@ -27,7 +27,7 @@ namespace OgretmenBulv5
                     Session["EPosta"] = GirisBilgi.EPosta;
                     Session["ID"] = GirisBilgi.ID;
                 }
-                Response.Redirect("Ogretmen/Ogretmen.aspx");
+                Response.Redirect("Ogretmen/OgretmenAnaSayfa.aspx");
             }
             else
             {

@@ -182,14 +182,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                    <a class="nav-link" data-toggle="collapse" href="OgretmenOzgecmis.aspx" aria-expanded="false">
                         <i class="icon-layout menu-icon"></i>
                         <span class="menu-title">Özgeçmiş</span>
 
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                    <a class="nav-link" data-toggle="collapse" href="Degerlendir.aspx" aria-expanded="false">
                         <i class="icon-columns menu-icon"></i>
                         <span class="menu-title">Değerlendirme</span>
 
@@ -197,7 +197,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                    <a class="nav-link" data-toggle="collapse" href="Degerlendirme.aspx" aria-expanded="false">
                         <i class="icon-bar-graph menu-icon"></i>
                         <span class="menu-title">Başvuru</span>
 
@@ -205,7 +205,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+                    <a class="nav-link" data-toggle="collapse" href="Yardim.aspx" aria-expanded="false">
                         <i class="icon-grid-2 menu-icon"></i>
                         <span class="menu-title">Yardım</span>
 
@@ -251,7 +251,7 @@
 
                                     <div class="form-group">
                                         <asp:Label ID="lblUyari" runat="server" CssClass="form-control" Text=""></asp:Label>
-                                        
+
                                     </div>
                                     <asp:Button ID="btnGonder" CssClass="btn btn-primary mr-2" runat="server" OnClick="btnGonder_Click" Text="Şehirleri Belirle" />
 
@@ -262,9 +262,9 @@
                     <div class="col-lg-6 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                               
-                                   <h3> Tercih Ettiğiniz Şehirler </h3>
-                              <p></p>
+
+                                <h3>Tercih Ettiğiniz Şehirler </h3>
+                                <p></p>
                                 <div class="forms-sample">
                                     <div class="form-group">
                                         <label for="exampleInputUsername1">1. Tercih Ettiğiniz Okul: </label>
@@ -286,15 +286,15 @@
                                         <label for="exampleInputConfirmPassword1">5. Tercih Ettiğiniz Okul: </label>
                                         <asp:Label ID="lblAktifCV" runat="server" CssClass="form-control" Text=""></asp:Label>
                                     </div>
-                                
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
-                 <div class="row">
+                <div class="row">
                 </div>
             </div>
             <!-- content-wrapper ends -->

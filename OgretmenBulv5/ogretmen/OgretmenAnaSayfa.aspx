@@ -182,14 +182,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="OgretmenOzgecmis.aspx" aria-expanded="false" aria-controls="ui-basic">
+                    <a class="nav-link" data-toggle="collapse" href="OgretmenOzgecmis.aspx" aria-expanded="false">
                         <i class="icon-layout menu-icon"></i>
                         <span class="menu-title">Özgeçmiş</span>
 
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                    <a class="nav-link" data-toggle="collapse" href="Degerlendir.aspx" aria-expanded="false">
                         <i class="icon-columns menu-icon"></i>
                         <span class="menu-title">Değerlendirme</span>
 
@@ -197,7 +197,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                    <a class="nav-link" data-toggle="collapse" href="Degerlendirme.aspx" aria-expanded="false">
                         <i class="icon-bar-graph menu-icon"></i>
                         <span class="menu-title">Başvuru</span>
 
@@ -205,7 +205,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+                    <a class="nav-link" data-toggle="collapse" href="Yardim.aspx" aria-expanded="false">
                         <i class="icon-grid-2 menu-icon"></i>
                         <span class="menu-title">Yardım</span>
 
